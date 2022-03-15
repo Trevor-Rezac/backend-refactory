@@ -10,3 +10,4 @@ CREATE TABLE orders (
 
 -- INSERT INTO
 --   orders (product, quantity)
+-- VALUES
