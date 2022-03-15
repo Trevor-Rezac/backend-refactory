@@ -64,7 +64,7 @@ describe('refactory routes', () => {
   });
 
   it('should be able to update an order', async () => {
-    const order = await createOrder({ product: 'Widget', quantity: 1 });
+    const order = await Order.insert({ product: 'Widget', quantity: 1 });
     const res = await request(app)
       .patch(`/api/v1/orders/${order.id}`)
       .send({ product: 'Thingamajig', quantity: 2 });
@@ -76,7 +76,7 @@ describe('refactory routes', () => {
     };
 
     expect(res.body).toEqual(expected);
-    expect(await getOrderById(order.id)).toEqual(expected);
+    expect(await Order.getById(order.id)).toEqual(expected);
   });
 
   it('should be able to delete an order', async () => {
