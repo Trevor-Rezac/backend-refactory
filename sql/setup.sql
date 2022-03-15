@@ -3,7 +3,10 @@
 DROP TABLE IF EXISTS orders;
 
 CREATE TABLE orders (
-  id BIGINT GENERATED ALWAYS AS IDENTITY,
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   product TEXT NOT NULL,
   quantity INT NOT NULL
 );
+
+-- INSERT INTO
+--   orders (product, quantity)
